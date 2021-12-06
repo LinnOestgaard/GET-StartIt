@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width:100px;
+        }
+        .bakgrunn {
+            background-color: rgb(252, 9, 211);
+            
+        }
+        .tekst  {
+            color:blue;
+        }
+        .marg{
+            margin: 5px;
+        }
+        .pad{
+            padding: 5px;
+        }
+        .kant{
+            border: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+        div.selected::before {
+            content: "🡆";
+        }
+        div.selected::after {
+            content: "🡄";
+        }
+    </style>
+</head>
+<body>
+    <div onclick="selectElement(this);" id="valgtFraStart">Første div</div>
+    <div onclick="selectElement(this);">Andre div</div>
+    <input id="chkb1" type="checkbox" onchange="toggleStyle(this, 'bakgrunn')"/>
+    <input id="chkb2" type="checkbox" onchange="toggleStyle(this, 'tekst')"/>
+    <input id="chkb3" type="checkbox" onchange="toggleStyle(this, 'marg')"/>
+    <input id="chkb4" type="checkbox" onchange="toggleStyle(this, 'pad')"/>
+    <input id="chkb5" type="checkbox" onchange="toggleStyle(this, 'kant')"/>
+    
+    <script>
+        const chkb1 = document.getElementById('chkb1'),
+              chkb2 = document.getElementById('chkb2'),
+              chkb3 = document.getElementById('chkb3'),
+              chkb4 = document.getElementById('chkb4'),
+              chkb5 = document.getElementById('chkb5');
+            
+        let active;
+        
+        selectElement(document.getElementById('valgtFraStart'));
+        function selectElement(element){
+            if (active) {  
+                active.classList.remove('selected');
+            }
+            element.classList.add('selected');
+            active = element;
+            chkb1.checked = element.classList.contains('bakgrunn');
+            chkb2.checked = element.classList.contains('tekst');
+            chkb3.checked = element.classList.contains('marg');
+            chkb4.checked = element.classList.contains('pad');
+            chkb5.checked = element.classList.contains('kant');
+        }
+
+        function toggleStyle(element, className) {
+            if (element.checked) {
+                active.classList.add(className);
+            } else {
+                active.classList.remove(className);
+            }
+        }
+    </script>
+</body>
+</html>

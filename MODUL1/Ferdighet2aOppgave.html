@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body onload="testOnLoad()">
+        <p>Ferdighet 2a - Alternative eventhandlere: onchange osv. </p>
+        <input type="text" onchange="testOnChange()" oninput="testOnInput()" onkeydown="testOnKeyDown()"/>
+        <h3 onmouseover="testOnMouseOver()" ondblclick="testondobbelclick()" onmouseout="testOnMouseOut()"   oncontextmenu="testContextMenu()">Test test test </h3>
+        <h2 id="info"></h2>
+
+        <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Mer informasjon her</a>
+        <script>
+           function testOnLoad(){
+                //document.getElementById('info').innerHTML += <li>onload</li>
+                console.log('onload');
+            }
+          function testOnChange() {
+          // document.getElementById('info').innerHTML += <li>onchange</li>
+            console.log('onchange');
+        }
+
+        function testOnInput() {
+          //  document.getElementById('info').innerHTML += <li>oninput</li>
+            console.log('oninput');
+        }
+
+        function testOnMouseOver() {
+           //document.getElementById('info').innerHTML += <li>onmouseover</li>
+            console.log('onmouseover');
+        }
+
+        function testOnMouseOut() {
+          //  document.getElementById('info').innerHTML += <li>onmouseout</li>
+            console.log('onmouseout');
+        }
+       function testondobbelclick(){
+             //  document.getElementById('info').innerHTML += <li>ondobbelclick</li>
+                console.log('ondobbelclick');
+            }
+        function testOnKeyDown() {
+             //  document.getElementById('info').innerHTML += <li>onkeydown</li>
+                console.log('onkeydown');
+        }
+        function testContextMenu() {
+             //  document.getElementById('info').innerHTML += <li>oncontextmenu</li>
+                console.log('oncontextmenu');
+        }
+        </script>
+    </body>
+</html>

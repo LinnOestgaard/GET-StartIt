@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Tirsdag26-10-LinnØ</title>
+    </head>
+    <body>
+     <h1>TirsdagsOppgave!</h1>
+     <div onclick="doSomething(this, 'rgb(242,64,212')"> Rosa</div>
+     <div onclick="doSomething(this, 'blue')"> Blå</div>
+     <div onclick="doSomething(this, 'green')"> Grønn</div>
+     <div onclick="doSomething(this, 'purple')"> Lilla</div>
+     <div onclick="doSomething(this, 'red')"> Rød</div>
+
+     <div id="utenTekst"></div>
+
+     <script>
+        function doSomething(element, color){
+          var utenTekst=  document.getElementById('utenTekst')
+          utenTekst.innerHTML = `<div style="color: ${color}">${element.innerHTML}</div>`;
+        }
+     </script>
+    </body>
+</html>

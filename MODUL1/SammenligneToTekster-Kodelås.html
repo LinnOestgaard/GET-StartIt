@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodelås åpen!</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const app = document.getElementById('app');
+        const secretCode = '2412';
+        let rightOrWrong = "Klarer du å skrive riktig passord?"
+
+        //Model
+        let pinCode = "";
+
+        //View
+        updateView();
+        function updateView(){
+            let html = `
+                <h1>Kodelås!</h1>
+                <div>${rightOrWrong}</div>
+                <div>${pinCode}</div>
+                <button onclick="add(1)">1</button>
+                <button onclick="add(2)">2</button>
+                <button onclick="add(3)">3</button>
+                <button onclick="add(4)">4</button>
+                <button onclick="add(5)">5</button>
+                <button onclick="add(6)">6</button>
+                <button onclick="add(7)">7</button>
+                <button onclick="add(8)">8</button>
+                <button onclick="add(9)">9</button>
+                <button onclick="add(0)">0</button>
+                <button onclick=check();>Sjekk</button>
+            `;
+            app.innerHTML = html;
+        }
+
+        //Controller
+        function add(num){
+            pinCode += num;
+            updateView();
+        }
+        function check(){
+            if (pinCode === secretCode){
+                rightOrWrong='Åpen';
+            }
+            else{
+                rightOrWrong='Wrong';
+            }
+            updateView();
+        }
+    </script>
+</body>
+</html>

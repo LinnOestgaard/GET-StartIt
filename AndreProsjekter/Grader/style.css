@@ -1,0 +1,41 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+h1 {
+    color: var(--c-d-blue);
+    margin: 15px 5px;
+}
+
+p {
+    background-color: var(--c-d-gray-light2);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+@media only screen and (max-width: 1000px) {
+    #app {
+        width: 95vw;
+    }
+}
+.f {
+    color: var(--c-d-red);
+}
+
+.c{
+    color: var(--c-d-green);
+}
+
+.n{
+    color: var(--c-d-deep-orange);
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Onclikck innerHTML</h1>
+    <p>Ferdighet 2 om onclick og innerHTML.</p>
+    <p onclick="doSomething()">Når du trykker på denne linjen.</p>
+    <p id="aaa">Blir dette...</p>
+
+    <script>
+        function doSomething(){
+            document.getElementById('aaa').innerHTML = '..til dette!';
+        }
+    </script>
+</body>
+</html>

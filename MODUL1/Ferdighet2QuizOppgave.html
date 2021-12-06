@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+
+    <style>
+        body{
+            background-color: rgb(159, 165, 255);
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Formula 1 quiz</h1>
+    <h2>Hvem er team principal i Red Bull Racing Team?</h2>
+    <p id="feil" onclick="doSomething()">Alan Van Der Merwe.</p> <br>
+    <p id="riktig" onclick="doSomethingR()">Christian Horner.</p> <br>
+    <p id="ogsåfeil" onclick="doSomethingW()">Toto Wolff.</p>
+
+    <script>
+        function doSomething(){
+            document.getElementById('feil').innerHTML = 'Feil, prøv igjen :)';
+        }
+        function doSomethingW(){
+            document.getElementById('ogsåfeil').innerHTML = 'Feil, prøv igjen :)';
+        }
+        function doSomethingR(){
+            document.getElementById('riktig').innerHTML = 'Riktig, bra bra hurra :)';
+        }
+    </script>
+</body>
+</html>

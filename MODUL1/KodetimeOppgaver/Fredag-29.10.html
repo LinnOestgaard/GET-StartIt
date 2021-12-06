@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Klarer du å gjette riktig?</title>
+</head>
+<body>
+<!--Lag en side som viser en input hvor bruker kan
+gjette ett tall eller ett ord. skal vises om det er 
+gjettet riktig eller feil. med bruk av IF-setning.-->
+<h1>Klarer du å gjette riktig tall.</h1>
+<p>Her får du fire hint.</p> </br>
+<p>Det er større enn 4.</p> </br>
+<p>15 delt på 3.</p> </br>
+<p>50 delt på 10.</p> </br>
+<p>1234_6789.</p> </br>
+<input onchange="checkUserinput(this.value)">
+
+<script>
+let userinput = "5";
+
+function checkUserinput(thisUserinput){
+    userinput=thisUserinput;
+    if (userinput== "5" || thisUserinput == "5") {
+        alert("Du gjettet riktig! Bra jobba!");
+
+}
+else{
+    alert("Du gjettet feil tall")
+}
+
+if(true){
+    }
+}
+</script>
+
+</body>
+</html>

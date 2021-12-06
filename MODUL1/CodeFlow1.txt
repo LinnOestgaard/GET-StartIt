@@ -1,0 +1,18 @@
+Si hvor mye kundne skal betale. Spør på hvilken måte kundne vil betale;
+if (kontant){
+  ta i mot betaling;
+if (betaling == pris){
+  si takk;
+}else{Gi tilbake tilgodebeløp;
+  si takk;
+}
+} else if (kort){
+  skriv inn beløp på terminal;
+Be kunde gjennomføre betaling på terminal;
+si takk
+}else if(Vipps){
+  Gi kunde Vipps-nr;
+  Be kunde betale i Vipps;
+  Se kvitteringen til kunden;
+  si takk;
+}

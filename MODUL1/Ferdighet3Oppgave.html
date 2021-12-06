@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <style>
+            table{
+                font-size: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Ferdighet 3 - spesialtilfelle, this og gjøre noe med det elementet man trykker på (eller som utløser eventet)</p>
+        <div>Samenlign dette eksempelet med "Ferdighet 2 - Onclick - kjøre funksjon som endrer innerHTML ut fra Id"!</div>
+        <h2 onclick="doSomething(this)">AAAAAAAAA</h2>
+        <h2 onclick="doSomething(this)">BBBBBBBBB</h2>
+
+        <table>
+            <tr>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+            </tr>
+            <tr>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td> 
+            </tr>
+            <tr>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+            </tr>
+            <tr>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+                <td onmouseover="vedmusover(this)">o</td>
+            </tr>
+        </table>
+
+        <script>
+            function doSomething(etNavnDuVelgerSelv){
+                etNavnDuVelgerSelv.innerHTML = 'CCCCCCCCCC';
+            }
+            function vedmusover(blirtilx){
+                blirtilx.innerHTML='x';
+            }
+        </script>
+
+    </body>
+</html>

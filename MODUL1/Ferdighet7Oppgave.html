@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>OppgaveFerdighet7</title>
+        <style>
+            .div{
+                background-color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Ferdighet 7 Oppgave.</h1>
+        <p>Lag en slider for å velge bredde fra 1 til 1000 og en slider for å velge høyde 
+         1 til 1000. Vis en div med valgt bredde og høyde - og legg inn tekst i diven som 
+         viser arealet (bredde*høyde) og omkretsen (2*bredde+2*høyde).</p>
+        <input id="bredde" type="range" min="1" max="1000" step="1" oninput="showDiv()" value="1"/>
+        <input id="hoyde" type="range" min="1" max="1000" step="1" oninput="showDiv()" value="1"/>
+        <div id="output"></div>
+        <div>Bredde: <span id="width"></span>px</div>
+        <div>Høyde: <span id="height"></span>px</div>
+        <div>Areal: <span id="areal"></span>px</div>
+        <div>Omkrets: <span id="omkrets"></span>px</div>
+
+        
+
+
+        <script>
+            var widthSlider = document.getElementById('bredde');
+            var heightSlider = document.getElementById('hoyde');
+            var output = document.getElementById('output');
+            var widthBox = document.getElementById('width');
+            var heightBox = document.getElementById('height');
+            var arealBox = document.getElementById('areal');
+            var omkretsBox = document.getElementById('omkrets');
+
+            showDiv();
+
+            function showDiv(){
+                var width = parseInt(widthSlider.value);
+                var height = parseInt(heightSlider.value);
+
+                widthBox.innerHTML = width;
+                heightBox.innerHTML = height;
+                arealBox.innerHTML = width * height;
+                omkretsBox.innerHTML = (width * 2) + (height * 2);
+
+
+                output.innerHTML = `<div class="div" style="
+                width: ${width}px;
+                height: ${height}px;
+                "></div>`;
+            }
+
+        </script>
+    </body>
+</html>

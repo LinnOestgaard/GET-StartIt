@@ -1,0 +1,47 @@
+body{
+    background-color: var(--c-d-gray);
+    color: white;
+}
+header{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--c-d-blue);
+}
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li a:hover{
+    background-color:var(--c-d-gray-dark1);
+    color:white;
+}
+
+#arrow{
+    color: var(--c-d-green);
+}
+#mcu{
+    color: var(--c-d-red);
+}
+#chicago{
+    color: var(--c-d-deep-orange);
+}
+#fbi{
+    color:var(--c-d-light-gray)
+}
+#greys{
+    color: var(--c-d-blue)
+}

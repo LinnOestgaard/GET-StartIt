@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Ferdighet 6 i MVC</title>
+        <style>
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="app"></div>
+      
+       <script>
+           //Model
+            var sizeSlider = '250';
+            var infoTxt = '';
+            var colorInput = 'gray';
+            var borderFarge = 'none';
+            var borderRadius = '0%';
+
+           //View
+            showDiv();
+            function showDiv(){
+                document.getElementById('app').innerHTML = `
+                <p>Ferdighet 6 - Sette sammen tekst av flere deler  og  bruke dette til å bygge HTML dynamisk</p>
+                <input
+                    type="range"
+                    min="100"
+                    max="500"
+                    step="10"
+                    value="${sizeSlider}"
+                    onchange="changeSize(this.value)"
+                />
+                <input
+                    type="text"
+                    onchange="txtInfo(this.value)"
+                    value="${infoTxt}"
+                />
+                <select 
+                onchange="changeColor(this.value)">
+                    <option value="${colorInput}">Velg farge</option>
+                    <option value="#ff0000">Red</option>
+                    <option value="#00cc00">Green</option>
+                    <option value="#3333ff">Blue</option>
+                </select>
+
+               ${showBox()}
+
+               <p>Oppgave</p>
+
+               <select 
+               onchange="changeBorder(this.value)">
+                    <option>Border</option>
+                    <option value="3px solid black">Black</option>
+                    <option value="3px solid rgb(179,179,179)">Grey</option>
+                    <option value="none">None</option>
+                </select>
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="${borderRadius}"
+                    onchange="changeRadius(this.value)"
+                />
+                `;
+            }
+            function showBox(){
+              return ` <div class="box" style="background-color:${colorInput}; 
+              width: ${sizeSlider}px; height: ${sizeSlider}px; border: ${borderFarge}; border-radius: ${borderRadius}%;">${infoTxt}</div>`
+            }
+           //Controller
+
+           function changeColor(colorValue){
+               console.log(colorValue, ' color value')
+               colorInput = colorValue;
+               showDiv();
+           }
+           function changeSize(sizeValue){
+               console.log(sizeValue, ' size value' )
+               sizeSlider = sizeValue;
+               showDiv();
+           }
+           function txtInfo(tekstValue){
+               console.log(tekstValue, ' tekst value')
+               infoTxt = tekstValue;
+               showDiv();
+           }
+           function changeBorder(borderValue){
+               console.log(borderValue, ' border value')
+                borderFarge = borderValue;
+                showDiv();
+           }
+           function changeRadius(radiusValue){
+               console.log(radiusValue, ' radius value')
+               borderRadius = radiusValue;
+               showDiv();
+           }
+           showDiv();
+       </script>
+    </body>
+</html>

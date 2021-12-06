@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.17.2.css">
+    <title>Email test</title>
+</head>
+<body>
+    <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.17.2.js"></script>
+  <script src="lib.js"></script>
+
+  <script>
+    QUnit.test('findEmail', function(assert){
+     assert.ok(findEmail('max.verstappen@redbullracing.com'));
+    });
+    QUnit.test('noSpaces', function(assert){
+     assert.ok(containsNoSpaces('max.verstappen@redbullracing.com'));
+    });
+    QUnit.test('Dots', function(assert){
+     assert.ok(containsDotBeforAndAfterAt('max.verstappen@redbullracing.com'));
+    });
+    QUnit.test('findEmail+spaces+Dots', function(assert){
+     assert.ok(containsAllFunctionsAbove('max.verstappen@redbullracing.com'));
+    });
+  </script>
+</body>
+</html>

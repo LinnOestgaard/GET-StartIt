@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--Lag oppgaven fra Fredag på MVC metoden 
+men ikke bruk alert, vis en tekst på siden
+om det er rett eller galt - med hjelp av en variabel-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Klarer du å gjette riktig?MedModelViewController</title>
+</head>
+<body>
+    <div id="app"></div>
+
+<script>
+    //hjelpevariabel
+        let appDiv = document.getElementById('app');
+        let answer = 'Her får du to hint.';
+    //Model
+        let userinput = "5";
+        let verdiAvInput;
+    //View
+        show();
+        function show(){
+            let html =`
+                <h1>Klarer du å gjette riktig tall.</h1>
+                <div>${answer}<div>
+                <p>Det er større enn 4.</p> 
+                <p>15 delt på 3.</p>
+                <input onchange="verdiAvInput=this.value">
+                <button onclick="checkUserInput()">Registrer</button>
+            `;
+            appDiv.innerHTML = html;
+        }
+    //Controller
+    function checkUserInput(){
+        if (userinput == verdiAvInput){
+            answer = 'Du gjettet riktig! Bra jobba!';
+        }
+        else{
+            answer='Du gjettet feil tall';
+        }
+        show();
+    }
+    show();
+</script>
+
+</body>
+</html>

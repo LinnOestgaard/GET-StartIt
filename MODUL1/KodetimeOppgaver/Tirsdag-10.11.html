@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Pizza-bestilling MVC</title>
+</head>
+<body>
+    <div id=app></div>
+    <button>Hei</button>
+    <script>
+        //hjelpevariabel
+        let appDiv = document.getElementById('app');
+
+        //Model
+        let bunn = '';
+        let fyll = '';
+        let størrelse = '';
+        let form = '';
+        let deling = '';
+        let steking = '';
+        let valgText = 'Du har ikke valgt noe enda!';
+        let disabledButton = 'disabled';
+
+        //View
+        show();
+        function show(){
+            let html= `<h1>PizzaBestilling</h1>
+                Bunn: <br>
+                <input type="radio" name="pizzaBunn" onchange="info('Tykk Bunn')"/>Tykk Bunn
+                <input type="radio" name="pizzaBunn" onchange="info('Tynn Bunn')"/>Tynn Bunn
+
+                <br>
+
+                Fyll: <br>
+                <input type="radio" name="pizzaFyll" onchange="info('Fyll Taco')"/>Taco
+                <input type="radio" name="pizzaFyll" onchange="info('Fyll Kylling')"/>Kylling
+                <input type="radio" name="pizzaFyll" onchange="info('Fyll Pepperoni')" />Pepperoni
+                <input type="radio" name="pizzaFyll" onchange="info('Fyll Hawaii')"/>Hawaii
+                
+                <br>
+
+                Størrelse: <br>
+                <input type="radio" name="pizzaStørrelse" onchange="info('Størrelse Stor')"/>Stor
+                <input type="radio" name="pizzaStørrelse" onchange="info('Størrelse Medium')" />Medium
+                <input type="radio" name="pizzaStørrelse" onchange="info('Størrelse Liten')"/>Liten
+
+                <br>
+
+                Form:<br>
+                <input type="radio" name="pizzaForm" onchange="info('Form Rund')"/>Rund
+                <input type="radio" name="pizzaForm" onchange="info('Form Firkantet')"/>Firkantet
+
+                <br>
+
+                Deling: <br>
+                <input type="radio" name="pizzaDeling" onchange="info('Deling Delt')"/>Delt
+                <input type="radio" name="pizzaDeling" onchange="info('Deling IkkeDelt')"/>Ikke Delt
+
+                <br>
+
+                Steking: <br>
+                <input type="radio" name="pizzaSteking" onchange="info('Steking Hel')"/>Helstekt
+                <input type="radio" name="pizzaSteking" onchange="info('Steking Halv')"/>Halvstekt
+                <input type="radio" name="pizzaSteking" onchange="info('Steking Ikke')"/>Ikke stekt
+
+                <div id="textBox"></div>
+            `;
+
+            appDiv.innerHTML = html;
+        }
+        showText();
+        function showText(){
+            let html = `<div>${valgText} ${bunn} ${fyll} ${størrelse} ${form} ${deling} ${steking}</div><br>
+            <button ${disabledButton} onclick="checkOrder()">Bestill Pizza</button>`
+            document.getElementById('textBox').innerHTML = html
+        }
+
+        //Controller
+
+        function info(valgtItem){
+            console.log(valgtItem, 'hva er dette?')
+
+            if(valgtItem == 'Tynn Bunn' || valgtItem == 'Tykk Bunn'){
+                bunn = valgtItem;
+            }
+
+            if(valgtItem == 'Fyll Taco'|| valgtItem == 'Fyll Kylling' || valgtItem == 'Fyll Pepperoni'|| valgtItem == 'Fyll Hawaii'){
+                fyll = valgtItem;
+            }
+            if(valgtItem == 'Størrelse Stor'||valgtItem == 'Størrelse Medium'||valgtItem == 'Størrelse Liten'){
+                størrelse = valgtItem;
+            }
+            if(valgtItem == 'Form Rund'||valgtItem == 'Form Firkantet'){
+                form = valgtItem;
+            }
+            if(valgtItem == 'Deling Delt'||valgtItem == 'Deling IkkeDelt'){
+                deling = valgtItem;
+            }
+            if(valgtItem == 'Steking Hel'||valgtItem == 'Steking Halv'||valgtItem == 'Steking Ikke'){
+                steking = valgtItem;
+            }
+            if(bunn != '' && fyll != '' && størrelse != '' && form != ''&& deling != ''&& steking != ''){
+                disabledButton= 'enabled';
+            }
+            showText();
+        }
+        function checkOrder(){
+            valgText = ` <button onclick="newOrder()">Legg inn ny bestilling</button>
+            Du har nå Bestilt en pizza! Den har :`;
+            showText();
+        }
+        function newOrder(){
+            bunn = '';
+            fyll = '';
+            størrelse = '';
+            form = '';
+            deling = '';
+            steking = '';
+            valgText = 'Du har ikke valgt noe enda!'
+            disabledButton = 'disabled'
+            show();
+            showText();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body onload="testOnLoad()">
+        <p>Onchange i parameter oppgaven.</p>
+        
+        <input type="text" placeholder="Skriv her"
+          onload="log('onload');"
+          oninput="log('oninput');"
+          onkeyup="log('onkeyup');"
+          onkeydown="log('onkeydown');"
+          onchange="log('onchange');"
+          ondblclick="log('ondblclick');"
+          onmouseover="log('onmouseover');"
+          onmouseout="log('onmouseout');"
+          oncontextmenu="log('oncontextmenu', event);"/>
+        <ul id="output"></ul>
+        <script>
+          const output = document.getElementById('output');
+
+          function log(value, evt) {
+              // This is just to stop context menu from showing
+              evt && evt.preventDefault();
+              output.innerHTML += `<li>Triggered event: <code>${value}</code></li>`;
+              console.log(`Triggered event: ${value}`);
+          }
+        </script>
+    </body>
+</html>
