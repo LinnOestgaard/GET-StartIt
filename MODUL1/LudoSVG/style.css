@@ -1,0 +1,98 @@
+body{
+    background-color:var(--c-d-gray-dark3);
+}
+
+@media only screen and (min-aspect-ratio:1/1){
+    svg{
+    width:95vw;
+    }
+}
+
+@media only screen and (max-aspect-ratio:1/1) {
+    svg{
+    height:95vh;}
+}
+
+rect.board {
+    fill: var(--c-d-gray-light1);
+    stroke:black;
+}
+
+rect.part{
+    stroke:black;
+    stroke-width:1px;
+    fill: transparent;
+}
+
+rect.square{
+    fill:white;
+    stroke:black;
+}
+
+rect.red{
+    fill:var(--c-d-red);
+    stroke:black;
+}
+
+rect.blue{
+    fill:var(--c-d-blue);
+    stroke:black;
+}
+
+rect.yellow{
+    fill:var(--c-d-orange);
+    stroke:black;
+}
+
+rect.green{
+    fill:var(--c-d-green);
+    stroke:black;
+}
+
+circle.circle{
+    stroke:black;
+}
+
+circle.blue{
+    fill:var(--c-d-blue);
+}
+
+circle.red{
+    fill:var(--c-d-red);
+}
+
+circle.yellow{
+    fill:var(--c-d-orange);
+}
+
+circle.green{
+    fill:var(--c-d-green);
+}
+
+circle.white{
+    fill:white;
+}
+
+polygon.red{
+    fill:var(--c-d-red);
+    stroke:black;
+    stroke-width: 1px;
+}
+
+polygon.blue{
+    fill:var(--c-d-blue);
+    stroke:black;
+    stroke-width: 1px;
+}
+
+polygon.yellow{
+    fill:var(--c-d-orange);
+    stroke:black;
+    stroke-width: 1px;
+}
+
+polygon.green{
+    fill:var(--c-d-green);
+    stroke:black;
+    stroke-width: 1px;
+}
